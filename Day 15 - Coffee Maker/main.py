@@ -38,12 +38,14 @@ def print_report():
     """
     print('Here is the current report for the coffee machine:')
     for key, value in resources.items():
-        if key == 'water' or key == 'milk':
-            print(f'{value} mL')
+        if key == 'water':
+            print(f'{value} mL of water')
+        elif key == 'milk':
+            print(f'{value} mL of milk')
         elif key == 'coffee':
-            print(f'{value} g')
+            print(f'{value} g of coffee')
         elif key == 'money':
-            print(f'${value:.2f}')
+            print(f'${value:.2f} of money')
 
 
 def check_resources(selection):
@@ -73,6 +75,7 @@ def subtract_resources(selection):
     for ingredient, amount_needed in drink_chosen['ingredients'].items():
         resources[ingredient] -= amount_needed
 
+
 def process_change():
     quarters = input('How many quarters are you inserting? ')
     dimes = input('How many dimes are you inserting? ')
@@ -84,7 +87,9 @@ def process_change():
     return change_total
 
 
-
+"""
+Below is the implementation of the coffee machine software.
+"""
 user_choice = ''
 while user_choice != 'Off':
     user_choice = input('What would you like? (espresso/latte/cappuccino): ')
@@ -113,6 +118,7 @@ while user_choice != 'Off':
                 coffee_cost = MENU[user_choice]['cost']
                 resources['money'] += coffee_cost
                 change_needed = total_user_change - coffee_cost
+                print('Here is your latte! Enjoy! ☕️')
                 print(f'Here is ${change_needed:.2f} in change.')
 
 
