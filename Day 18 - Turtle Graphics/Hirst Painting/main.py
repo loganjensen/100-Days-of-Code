@@ -22,6 +22,8 @@ color_list = [(219, 231, 240), (241, 222, 231), (121, 169, 196), (222, 238, 230)
               (193, 84, 110), (217, 87, 62), (133, 32, 52), (76, 161, 130), (225, 170, 189), (55, 162, 184),
               (69, 33, 53), (237, 169, 157), (151, 213, 200), (108, 119, 171), (43, 56, 108), (34, 44, 72),
               (145, 210, 222), (71, 39, 27), (180, 185, 216), (123, 38, 30)]
+
+# Screen setup
 screen = t.Screen()
 screen.screensize(15, 15)
 screen.setworldcoordinates(-1, -1, 10, 10)
@@ -29,12 +31,13 @@ screen.setworldcoordinates(-1, -1, 10, 10)
 timmy = t.Turtle()
 t.colormode(255)
 
+# Move turtle throughout canvas, creating a dot on every 10x10 coordinate
 i = j = 0
 while i < 10:
     while j < 10:
         timmy.setx(j)
-        timmy.pendown()
         timmy.color(random.choice(color_list))
+        timmy.pendown()
         timmy.dot(35)
         timmy.penup()
         j += 1
