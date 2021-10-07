@@ -36,14 +36,20 @@ def random_color():
 #     timmy.forward(20)
 #     timmy.right(random.choice(directions))
 
-def draw_spirograph(size_of_gap):
-    for i in range(int(360 / size_of_gap)):
-        timmy.color(random_color())
-        timmy.circle(100)
-        current_heading = timmy.heading()
-        timmy.setheading(current_heading + size_of_gap)
 
-draw_spirograph(1)
+#
+# DRAW SPIROGRAPH
+#
+# def draw_spirograph(size_of_gap):
+#     for i in range(int(360 / size_of_gap)):
+#         timmy.color(random_color())
+#         timmy.circle(100)
+#         current_heading = timmy.heading()
+#         timmy.setheading(current_heading + size_of_gap)
+#
+# draw_spirograph(1)
+
+
 
 screen = t.Screen()
 screen.exitonclick()
